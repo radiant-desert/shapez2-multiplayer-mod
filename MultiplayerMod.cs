@@ -17,7 +17,6 @@ using Game.Core;
 using Game.Core.Research;
 using Global.Core;
 using System.Collections.Generic;
-//using Game.Rendering; // Added for SmartBuildingBlueprintRenderer
 using Game.Placement.Utils;
 
 namespace Shapez2MultiplayerMod
@@ -212,13 +211,13 @@ namespace Shapez2MultiplayerMod
             // Update states for the next frame
             wasPlacingBuildingsLastFrame = GhostPlacementHook.WasActiveThisFrame;
             wasPlacingIslandsLastFrame = IslandPlacementHook.WasActiveThisFrame;
-            // wasPlacingBlueprintLastFrame = isPlacingBlueprintThisFrame; // -- BLUEPRINT LOGIC DISABLED
+            // wasPlacingBlueprintLastFrame = isPlacingBlueprintThisFrame; 
 
             // Reset all flags for the next frame's check
             GhostPlacementHook.WasActiveThisFrame = false;
             IslandPlacementHook.WasActiveThisFrame = false;
-            // BlueprintPlacementHook.WasActiveThisFrame = false;       // -- BLUEPRINT LOGIC DISABLED
-            // IslandBlueprintPlacementHook.WasActiveThisFrame = false; // -- BLUEPRINT LOGIC DISABLED
+            // BlueprintPlacementHook.WasActiveThisFrame = false;       
+            // IslandBlueprintPlacementHook.WasActiveThisFrame = false; 
         }
         
         void Update()

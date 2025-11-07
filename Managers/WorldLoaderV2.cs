@@ -6,9 +6,6 @@ using UnityEngine.SceneManagement;
 
 namespace Shapez2MultiplayerMod.Managers
 {
-    /// <summary>
-    /// Version 2: Uses game's existing systems instead of recreating them
-    /// </summary>
     public class WorldLoaderV2
     {
         /// <summary>
@@ -164,7 +161,6 @@ namespace Shapez2MultiplayerMod.Managers
                     {
                         MultiplayerMod.Log.LogInfo("[WorldLoaderV2] Found GameCore instance!");
                         
-                        // IMPORTANT: We need to provide options BEFORE calling Start()
                         MultiplayerMod.Log.LogInfo("[WorldLoaderV2] Setting up CrossSceneGameOptionsTransfer first...");
                         if (SetupCrossSceneOptions())
                         {

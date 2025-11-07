@@ -68,13 +68,13 @@ namespace Shapez2MultiplayerMod.Managers
             filter.mesh = pointerMesh;
 
             MeshRenderer renderer = pointer.AddComponent<MeshRenderer>();
-            // Use an Unlit shader so the cursor color is always bright and unaffected by lighting
+            // Use an Unlit shader so the cursor color is always bright
             renderer.material.shader = Shader.Find("Universal RenderPipeline/Unlit"); 
             renderer.material.color = playerColor;
             
             GameObject labelObj = new GameObject($"Label_{player.PlayerName}");
             labelObj.transform.SetParent(visualsParent.transform);
-            // Adjust text position to be nicely above the new, smaller cursor
+            // Adjust text position to be above the cursor
             labelObj.transform.localPosition = new Vector3(0, 1.1f, 0); 
             
             float outlineOffset = 0.03f;

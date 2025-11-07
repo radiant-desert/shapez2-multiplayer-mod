@@ -20,6 +20,7 @@ This mod is currently in active development. It has several functional features,
 5.  Build the project.
 6.  Copy the resulting `Shapez2MultiplayerMod.dll` into your `BepInEx/plugins` folder.
 7.  Make sure to add the LiteNetLib.dll and Newtonsoft.Json.dll to the `BepInEx/plugins` folder aswell.
+8.  Not a step but if you see errors in CMD window about SmarterStackSim you can ignore it as it doesnt affect the multiplayermod but please can someone remove the dependency of it.
 
 ## To run
 

@@ -234,9 +234,6 @@ namespace Shapez2MultiplayerMod.Networking
                         if (IsServer)
                         {
                             MultiplayerMod.Log.LogInfo("[Server] Received world modification, broadcasting to ALL clients.");
-                            // --- THE FIX ---
-                            // Broadcast to ALL clients, including the original sender to confirm the action.
-                            // Do NOT exclude the sender.
                             BroadcastToClients(request);
                         }
 

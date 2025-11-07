@@ -66,10 +66,10 @@ namespace Shapez2MultiplayerMod.Models
 
         // Progression Sync packets
         GameState = 80,
-        RequestUnlockUpgrade = 81, // <-- ADD THIS
-        ConfirmUnlockUpgrade = 82, // <-- AND THIS
-        RequestLevelUpUpgrade = 83, // NEW: For Shop Upgrades
-        ConfirmLevelUpUpgrade = 84,  // NEW: For Shop Upgrades
+        RequestUnlockUpgrade = 81, 
+        ConfirmUnlockUpgrade = 82, 
+        RequestLevelUpUpgrade = 83, 
+        ConfirmLevelUpUpgrade = 84, 
         UpdateCurrency = 85,
         RequestTogglePause = 90,
         ConfirmPauseState = 91,
@@ -92,7 +92,6 @@ namespace Shapez2MultiplayerMod.Models
     [Serializable]
     public class RequestWorldReloadPacket : NetworkPacket
     {
-        // This packet needs no data, its type is its message.
         public WorldStatePacket WorldState { get; set; }
         public RequestWorldReloadPacket() : base(PacketType.RequestWorldReload) { }
     }
@@ -180,7 +179,6 @@ namespace Shapez2MultiplayerMod.Models
     [Serializable]
     public class GameStatePacket : NetworkPacket
     {
-        // We now send structured data instead of a single serialized string.
         public int ResearchPoints { get; set; }
         public List<string> UnlockedMilestoneIds { get; set; }
         public Dictionary<string, int> LinearUpgradeLevels { get; set; }

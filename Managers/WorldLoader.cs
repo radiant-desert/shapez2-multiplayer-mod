@@ -31,8 +31,6 @@ namespace Shapez2MultiplayerMod.Managers
                 Scene activeScene = SceneManager.GetActiveScene();
                 MultiplayerMod.Log.LogInfo($"[WorldLoader] Active scene: {activeScene.name}");
                 
-                // TODO: Find the actual save name from game's save system
-                // For now, return the scene name
                 return activeScene.name;
             }
             catch (Exception ex)
@@ -354,11 +352,9 @@ namespace Shapez2MultiplayerMod.Managers
                     
                     if (parameters.Length > 0)
                     {
-                        // The parameter type is IGameStartOptions
                         var optionsInterfaceType = parameters[0].ParameterType;
                         MultiplayerMod.Log.LogInfo($"[WorldLoader] Options interface type: {optionsInterfaceType.Name}");
                         
-                        // Find a concrete implementation of IGameStartOptions
                         var optionsImpl = FindGameStartOptionsImplementation(optionsInterfaceType);
                         
                         if (optionsImpl != null)
@@ -765,9 +761,6 @@ namespace Shapez2MultiplayerMod.Managers
         {
             try
             {
-                // IMPORTANT: Don't load the scene directly
-                // Shapez 2 requires game options to be set first
-                // This causes the "No options provided to consume" error
                 
                 MultiplayerMod.Log.LogWarning("[WorldLoader] Direct scene loading causes game options error");
                 MultiplayerMod.Log.LogWarning("[WorldLoader] Need to set CrossSceneGameOptionsTransfer before loading");
@@ -788,9 +781,6 @@ namespace Shapez2MultiplayerMod.Managers
         {
             try
             {
-                // IMPORTANT: Direct scene loading doesn't work for Shapez 2
-                // The game requires CrossSceneGameOptionsTransfer to be set
-                // We need to find and use the game's proper loading mechanism
                 
                 MultiplayerMod.Log.LogWarning("[WorldLoader] Direct scene loading not supported");
                 MultiplayerMod.Log.LogWarning("[WorldLoader] Shapez 2 requires game options transfer");

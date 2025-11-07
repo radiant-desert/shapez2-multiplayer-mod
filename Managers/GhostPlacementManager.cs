@@ -16,8 +16,6 @@ namespace Shapez2MultiplayerMod.Managers
         private readonly Dictionary<int, List<SmartBuildingBlueprintRenderer.DrawData>> remotePlayerDrawData = 
             new Dictionary<int, List<SmartBuildingBlueprintRenderer.DrawData>>();
 
-        // NO MORE MATERIALS OR INITIALIZE METHOD NEEDED!
-
         public void UpdateGhostsForPlayer(PlayerGhostPlacementPacket packet)
         {
             int playerId = packet.PlayerId;

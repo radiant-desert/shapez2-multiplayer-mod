@@ -9,7 +9,6 @@ using System.Linq;
 using System.Reflection;
 using UnityEngine;
 
-// Game-specific using statements
 using Game.Core;
 using Game.Core.Coordinates;
 using Game.Core.Research;
@@ -164,7 +163,7 @@ namespace Shapez2MultiplayerMod.Managers
                 if (reloadPacket.WorldState != null)
                 {
                     MultiplayerMod.Log.LogInfo("[WorldState] Received world reload command from server. Applying...");
-                    ApplyWorldState(reloadPacket.WorldState, null); // No callback needed on a forced reload
+                    ApplyWorldState(reloadPacket.WorldState, null); 
                 }
             }
         }

@@ -57,7 +57,7 @@ namespace Shapez2MultiplayerMod.Managers
         {
             if (playerManager.LocalPlayerId < 0)
             {
-                // This is a key debug message. If you see this, the client's ID was never set.
+                // If you see this, the client's ID was never set.
                 MultiplayerMod.Log.LogWarning("[PlayerPositionSync] Cannot send position, LocalPlayerId is not set!");
                 return;
             }

@@ -11,7 +11,7 @@ using UnityEngine.SceneManagement;
 // Required for the save/load logic
 using Game.Core;
 using Game.Core.Serialization;
-using Unity.Core.Logging; // The correct namespace for UnityLogger
+using Unity.Core.Logging;
 
 namespace Shapez2MultiplayerMod.Managers
 {
@@ -159,10 +159,10 @@ namespace Shapez2MultiplayerMod.Managers
 
             try
             {
-                // FIX: Use the correct namespace for UnityLogger
+
                 var savegameReader = new SaveFileAccessor(new UnityLogger(null)).Read(savePath, new Dictionary<Type, IDataSerializer>());
                 
-                // FIX: Use the correct property for the Metadata's UID.
+
                 string saveUid = savegameReader.Metadata.InternalUuid;
 
                 Globals.CrossSceneGameOptions.Provide(new GameStartOptionsContinueExisting(savegameReader, false, saveUid));
